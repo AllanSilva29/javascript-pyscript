@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.3/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.3/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="result"></h1>
+    </div>
+    <script type="text/javascript">
+      async function main(){
+        let pyodide = await loadPyodide();   
+        await pyodide.loadPackage("micropip");
+
+        const micropip = pyodide.pyimport("micropip");
+        await micropip.install('pynetbox');
+
+        pyodide.runPython(`
+          import pynetbox
+          print(pynetbox)
+        `);
+      }
+      main();
+    </script>
+    <!-- <py-script output="result">
+      import pynetbox
+
+      print(pynetbox)
+    </py-script> -->
+  </body>
+</html>
