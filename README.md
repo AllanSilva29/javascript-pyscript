@@ -20,6 +20,3 @@ This project is a web application that utilizes Pyodide to run Python code in th
 
 ## Contributing
 Contributions are welcome! If you would like to contribute to this project, please open an issue or submit a pull request.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
